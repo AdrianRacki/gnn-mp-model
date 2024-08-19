@@ -1,0 +1,72 @@
+   | Name                              | Type           | Params | Mode 
+------------------------------------------------------------------------------
+0  | model                             | GNN            | 763 K  | train
+1  | model.conv_layers                 | ModuleList     | 405 K  | train
+2  | model.conv_layers.0               | GATv2Conv      | 101 K  | train
+3  | model.conv_layers.0.aggr_module   | SumAggregation | 0      | train
+4  | model.conv_layers.0.lin_l         | Linear         | 49.5 K | train
+5  | model.conv_layers.0.lin_r         | Linear         | 49.5 K | train
+6  | model.conv_layers.0.lin_edge      | Linear         | 1.5 K  | train
+7  | model.conv_layers.1               | GATv2Conv      | 101 K  | train
+8  | model.conv_layers.1.aggr_module   | SumAggregation | 0      | train
+9  | model.conv_layers.1.lin_l         | Linear         | 49.5 K | train
+10 | model.conv_layers.1.lin_r         | Linear         | 49.5 K | train
+11 | model.conv_layers.1.lin_edge      | Linear         | 1.5 K  | train
+12 | model.conv_layers.2               | GATv2Conv      | 101 K  | train
+13 | model.conv_layers.2.aggr_module   | SumAggregation | 0      | train
+14 | model.conv_layers.2.lin_l         | Linear         | 49.5 K | train
+15 | model.conv_layers.2.lin_r         | Linear         | 49.5 K | train
+16 | model.conv_layers.2.lin_edge      | Linear         | 1.5 K  | train
+17 | model.conv_layers.3               | GATv2Conv      | 101 K  | train
+18 | model.conv_layers.3.aggr_module   | SumAggregation | 0      | train
+19 | model.conv_layers.3.lin_l         | Linear         | 49.5 K | train
+20 | model.conv_layers.3.lin_r         | Linear         | 49.5 K | train
+21 | model.conv_layers.3.lin_edge      | Linear         | 1.5 K  | train
+22 | model.transf_layers               | ModuleList     | 197 K  | train
+23 | model.transf_layers.0             | Linear         | 49.3 K | train
+24 | model.transf_layers.1             | Linear         | 49.3 K | train
+25 | model.transf_layers.2             | Linear         | 49.3 K | train
+26 | model.transf_layers.3             | Linear         | 49.3 K | train
+27 | model.pooling_layers              | ModuleList     | 512    | train
+28 | model.pooling_layers.0            | TopKPooling    | 128    | train
+29 | model.pooling_layers.0.select     | SelectTopK     | 128    | train
+30 | model.pooling_layers.0.select.act | Tanh           | 0      | train
+31 | model.pooling_layers.0.connect    | FilterEdges    | 0      | train
+32 | model.pooling_layers.1            | TopKPooling    | 128    | train
+33 | model.pooling_layers.1.select     | SelectTopK     | 128    | train
+34 | model.pooling_layers.1.select.act | Tanh           | 0      | train
+35 | model.pooling_layers.1.connect    | FilterEdges    | 0      | train
+36 | model.pooling_layers.2            | TopKPooling    | 128    | train
+37 | model.pooling_layers.2.select     | SelectTopK     | 128    | train
+38 | model.pooling_layers.2.select.act | Tanh           | 0      | train
+39 | model.pooling_layers.2.connect    | FilterEdges    | 0      | train
+40 | model.pooling_layers.3            | TopKPooling    | 128    | train
+41 | model.pooling_layers.3.select     | SelectTopK     | 128    | train
+42 | model.pooling_layers.3.select.act | Tanh           | 0      | train
+43 | model.pooling_layers.3.connect    | FilterEdges    | 0      | train
+44 | model.gn_layers                   | ModuleList     | 1.5 K  | train
+45 | model.gn_layers.0                 | GraphNorm      | 384    | train
+46 | model.gn_layers.1                 | GraphNorm      | 384    | train
+47 | model.gn_layers.2                 | GraphNorm      | 384    | train
+48 | model.gn_layers.3                 | GraphNorm      | 384    | train
+49 | model.conv1                       | GATv2Conv      | 10.0 K | train
+50 | model.conv1.aggr_module           | SumAggregation | 0      | train
+51 | model.conv1.lin_l                 | Linear         | 3.8 K  | train
+52 | model.conv1.lin_r                 | Linear         | 3.8 K  | train
+53 | model.conv1.lin_edge              | Linear         | 1.5 K  | train
+54 | model.transf1                     | Linear         | 49.3 K | train
+55 | model.gn1                         | GraphNorm      | 384    | train
+56 | model.pooling_layer1              | TopKPooling    | 128    | train
+57 | model.pooling_layer1.select       | SelectTopK     | 128    | train
+58 | model.pooling_layer1.select.act   | Tanh           | 0      | train
+59 | model.pooling_layer1.connect      | FilterEdges    | 0      | train
+60 | model.linear1                     | Linear         | 65.8 K | train
+61 | model.linear2                     | Linear         | 32.9 K | train
+62 | model.linear3                     | Linear         | 129    | train
+63 | r2                                | R2Score        | 0      | train
+64 | loss_fn                           | MSELoss        | 0      | train
+------------------------------------------------------------------------------
+763 K     Trainable params
+0         Non-trainable params
+763 K     Total params
+3.053     Total estimated model params size (MB)

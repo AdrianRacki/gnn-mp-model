@@ -1,0 +1,7 @@
+lr: 0.001
+weight_decay: 1.0e-05
+gamma: 0.95
+hidden_size: 32
+dense_size: 64
+num_layers: 5
+pooling: false

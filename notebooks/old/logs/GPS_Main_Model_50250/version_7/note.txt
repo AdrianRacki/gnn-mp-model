@@ -1,0 +1,1 @@
+full data, 4 linear layers, no gf, no pool,

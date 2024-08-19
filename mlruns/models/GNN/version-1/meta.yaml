@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1720516020066
+current_stage: None
+description: ''
+last_updated_timestamp: 1720516020066
+name: GNN
+run_id: 154c497c959b4953a5be6647ac44b8d3
+run_link: ''
+source: file:///C:/Users/01121272/Desktop/Projects/gnn-mp-model/mlruns/167403683677490936/154c497c959b4953a5be6647ac44b8d3/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///C:/Users/01121272/Desktop/Projects/gnn-mp-model/mlruns/167403683677490936/154c497c959b4953a5be6647ac44b8d3/artifacts/model
+user_id: null
+version: 1

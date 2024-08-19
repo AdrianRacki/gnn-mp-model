@@ -1,0 +1,21 @@
+model = GNN()
+optimizer = torch.optim.SGD(params=model.parameters(), lr=1e-4)
+loss_fn = HuberLoss()
+model.train()
+r2 = R2Score()
+for epoch in range(50):
+    loss = 0
+    for _, batch in enumerate(dataloader):
+        optimizer.zero_grad()
+        pred = model(batch.x.float(),
+                            batch.edge_attr.float(),
+                            batch.edge_index,
+                            batch.batch)
+        loss = loss_fn(torch.squeeze(pred), batch.y.float())
+        r2.update(torch.squeeze(pred), batch.y.float())
+        r2_score_nn = r2.compute()
+        r2_score_fn = r2_score(torch.squeeze(pred), batch.y.float())
+        r2_score_sk = sklearn_r2(batch.y.float().numpy(), pred.detach().numpy())
+        loss.backward()
+        optimizer.step()
+        print(loss, r2_score_nn, r2_score_fn, r2_score_sk)

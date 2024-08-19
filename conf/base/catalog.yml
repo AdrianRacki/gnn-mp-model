@@ -1,0 +1,68 @@
+main_database:
+  type: pandas.CSVDataset
+  filepath: data\01_raw\main_database.csv
+
+ilt_database:
+  type: pandas.CSVDataset
+  filepath: data\01_raw\ilt_database.csv
+
+preprocessed_main_database:
+  type: pandas.CSVDataset
+  filepath: data\02_intermediate\preprocessed_main_database_database.csv
+
+preprocessed_ilt_database:
+  type: pandas.CSVDataset
+  filepath: data\02_intermediate\preprocessed_ilt_database.csv
+
+merged_database:
+  type: pandas.CSVDataset
+  filepath: data\03_primary\merged_database.csv
+
+smiles_to_use:
+  type: pandas.CSVDataset
+  filepath: data\07_model_output\smiles_to_use.csv
+
+random_train:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/random_train.pq
+
+random_test:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/random_test.pq
+
+sys_train:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/sys_train.pq
+
+sys_test:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/sys_test.pq
+
+sys_train_dataloader:
+  type: gnn_mp_model.datasets.graph_dataset.GraphDataset
+  filepath: data/04_feature/sys_train_dataloader.pt
+
+sys_test_dataloader:
+  type: gnn_mp_model.datasets.graph_dataset.GraphDataset
+  filepath: data/04_feature/sys_test_dataloader.pt
+
+random_train_dataloader:
+  type: gnn_mp_model.datasets.graph_dataset.GraphDataset
+  filepath: data/04_feature/random_train_dataloader.pt
+
+random_test_dataloader:
+  type: gnn_mp_model.datasets.graph_dataset.GraphDataset
+  filepath: data/04_feature/random_test_dataloader.pt
+
+predict_dataloader:
+  type: gnn_mp_model.datasets.graph_dataset.GraphDataset
+  filepath: data/04_feature/predict_dataloader.pt
+
+GNN_model:
+  type: kedro_mlflow.io.models.MlflowModelTrackingDataset
+  flavor: mlflow.pytorch
+
+GNN_model_local:
+  type: kedro_mlflow.io.models.MlflowModelLocalFileSystemDataset
+  flavor: mlflow.pytorch
+  filepath: data/06_models/GPS_model.pt

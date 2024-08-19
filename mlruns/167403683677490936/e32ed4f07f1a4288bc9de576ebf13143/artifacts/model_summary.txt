@@ -1,0 +1,27 @@
+   | Name                            | Type            | Params | Mode 
+-----------------------------------------------------------------------------
+0  | model                           | GNN             | 24.2 K | train
+1  | model.conv1                     | TransformerConv | 9.0 K  | train
+2  | model.conv1.aggr_module         | SumAggregation  | 0      | train
+3  | model.conv1.lin_key             | Linear          | 1.9 K  | train
+4  | model.conv1.lin_query           | Linear          | 1.9 K  | train
+5  | model.conv1.lin_value           | Linear          | 1.9 K  | train
+6  | model.conv1.lin_edge            | Linear          | 768    | train
+7  | model.conv1.lin_skip            | Linear          | 1.9 K  | train
+8  | model.conv1.lin_beta            | Linear          | 576    | train
+9  | model.transf1                   | Linear          | 12.4 K | train
+10 | model.linear1                   | Linear          | 2.1 K  | train
+11 | model.linear2                   | Linear          | 528    | train
+12 | model.linear3                   | Linear          | 17     | train
+13 | model.pooling_layer1            | TopKPooling     | 64     | train
+14 | model.pooling_layer1.select     | SelectTopK      | 64     | train
+15 | model.pooling_layer1.select.act | Tanh            | 0      | train
+16 | model.pooling_layer1.connect    | FilterEdges     | 0      | train
+17 | model.bn1                       | BatchNorm1d     | 128    | train
+18 | r2                              | R2Score         | 0      | train
+19 | loss_fn                         | MSELoss         | 0      | train
+-----------------------------------------------------------------------------
+24.2 K    Trainable params
+0         Non-trainable params
+24.2 K    Total params
+0.097     Total estimated model params size (MB)

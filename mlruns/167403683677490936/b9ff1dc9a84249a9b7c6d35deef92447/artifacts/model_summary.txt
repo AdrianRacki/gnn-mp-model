@@ -1,0 +1,35 @@
+   | Name                            | Type            | Params | Mode 
+-----------------------------------------------------------------------------
+0  | model                           | GNN             | 334 K  | train
+1  | model.conv1                     | TransformerConv | 18.0 K | train
+2  | model.conv1.aggr_module         | SumAggregation  | 0      | train
+3  | model.conv1.lin_key             | Linear          | 3.8 K  | train
+4  | model.conv1.lin_query           | Linear          | 3.8 K  | train
+5  | model.conv1.lin_value           | Linear          | 3.8 K  | train
+6  | model.conv1.lin_edge            | Linear          | 1.5 K  | train
+7  | model.conv1.lin_skip            | Linear          | 3.8 K  | train
+8  | model.conv1.lin_beta            | Linear          | 1.2 K  | train
+9  | model.conv2                     | TransformerConv | 200 K  | train
+10 | model.conv2.aggr_module         | SumAggregation  | 0      | train
+11 | model.conv2.lin_key             | Linear          | 49.5 K | train
+12 | model.conv2.lin_query           | Linear          | 49.5 K | train
+13 | model.conv2.lin_value           | Linear          | 49.5 K | train
+14 | model.conv2.lin_edge            | Linear          | 1.5 K  | train
+15 | model.conv2.lin_skip            | Linear          | 49.5 K | train
+16 | model.conv2.lin_beta            | Linear          | 1.2 K  | train
+17 | model.transf1                   | Linear          | 49.3 K | train
+18 | model.linear1                   | Linear          | 33.0 K | train
+19 | model.linear2                   | Linear          | 32.9 K | train
+20 | model.linear3                   | Linear          | 129    | train
+21 | model.pooling_layer1            | TopKPooling     | 128    | train
+22 | model.pooling_layer1.select     | SelectTopK      | 128    | train
+23 | model.pooling_layer1.select.act | Tanh            | 0      | train
+24 | model.pooling_layer1.connect    | FilterEdges     | 0      | train
+25 | model.bn1                       | BatchNorm1d     | 256    | train
+26 | r2                              | R2Score         | 0      | train
+27 | loss_fn                         | MSELoss         | 0      | train
+-----------------------------------------------------------------------------
+334 K     Trainable params
+0         Non-trainable params
+334 K     Total params
+1.338     Total estimated model params size (MB)

@@ -1,0 +1,1 @@
+-50 - 250 data, 4 linear layers

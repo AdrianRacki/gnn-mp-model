@@ -1,0 +1,290 @@
+    | Name                                           | Type                            | Params | Mode 
+-------------------------------------------------------------------------------------------------------------
+0   | model                                          | GNN                             | 167 K  | train
+1   | model.node_emb                                 | Linear                          | 576    | train
+2   | model.pe_lin                                   | Linear                          | 248    | train
+3   | model.pe_norm                                  | BatchNorm1d                     | 60     | train
+4   | model.edge_emb                                 | Linear                          | 160    | train
+5   | model.aggr                                     | SetTransformerAggregation       | 16.9 K | train
+6   | model.aggr.encoders                            | ModuleList                      | 5.3 K  | train
+7   | model.aggr.encoders.0                          | SetAttentionBlock               | 5.3 K  | train
+8   | model.aggr.encoders.0.mab                      | MultiheadAttentionBlock         | 5.3 K  | train
+9   | model.aggr.encoders.0.mab.attn                 | MultiheadAttention              | 4.2 K  | train
+10  | model.aggr.encoders.0.mab.attn.out_proj        | NonDynamicallyQuantizableLinear | 1.1 K  | train
+11  | model.aggr.encoders.0.mab.lin                  | Linear                          | 1.1 K  | train
+12  | model.aggr.pma                                 | PoolingByMultiheadAttention     | 6.4 K  | train
+13  | model.aggr.pma.lin                             | Linear                          | 1.1 K  | train
+14  | model.aggr.pma.mab                             | MultiheadAttentionBlock         | 5.3 K  | train
+15  | model.aggr.pma.mab.attn                        | MultiheadAttention              | 4.2 K  | train
+16  | model.aggr.pma.mab.attn.out_proj               | NonDynamicallyQuantizableLinear | 1.1 K  | train
+17  | model.aggr.pma.mab.lin                         | Linear                          | 1.1 K  | train
+18  | model.aggr.decoders                            | ModuleList                      | 5.3 K  | train
+19  | model.aggr.decoders.0                          | SetAttentionBlock               | 5.3 K  | train
+20  | model.aggr.decoders.0.mab                      | MultiheadAttentionBlock         | 5.3 K  | train
+21  | model.aggr.decoders.0.mab.attn                 | MultiheadAttention              | 4.2 K  | train
+22  | model.aggr.decoders.0.mab.attn.out_proj        | NonDynamicallyQuantizableLinear | 1.1 K  | train
+23  | model.aggr.decoders.0.mab.lin                  | Linear                          | 1.1 K  | train
+24  | model.gps_list                                 | ModuleList                      | 58.9 K | train
+25  | model.gps_list.0                               | GPSConv                         | 11.8 K | train
+26  | model.gps_list.0.conv                          | GINEConv                        | 3.2 K  | train
+27  | model.gps_list.0.conv.aggr_module              | SumAggregation                  | 0      | train
+28  | model.gps_list.0.conv.nn                       | Sequential                      | 2.1 K  | train
+29  | model.gps_list.0.conv.nn.0                     | Linear                          | 1.1 K  | train
+30  | model.gps_list.0.conv.nn.1                     | ReLU                            | 0      | train
+31  | model.gps_list.0.conv.nn.2                     | Linear                          | 1.1 K  | train
+32  | model.gps_list.0.conv.lin                      | Linear                          | 1.1 K  | train
+33  | model.gps_list.0.attn                          | MultiheadAttention              | 4.2 K  | train
+34  | model.gps_list.0.attn.out_proj                 | NonDynamicallyQuantizableLinear | 1.1 K  | train
+35  | model.gps_list.0.mlp                           | Sequential                      | 4.2 K  | train
+36  | model.gps_list.0.mlp.0                         | Linear                          | 2.1 K  | train
+37  | model.gps_list.0.mlp.1                         | ReLU                            | 0      | train
+38  | model.gps_list.0.mlp.2                         | Dropout                         | 0      | train
+39  | model.gps_list.0.mlp.3                         | Linear                          | 2.1 K  | train
+40  | model.gps_list.0.mlp.4                         | Dropout                         | 0      | train
+41  | model.gps_list.0.norm1                         | BatchNorm                       | 64     | train
+42  | model.gps_list.0.norm1.module                  | BatchNorm1d                     | 64     | train
+43  | model.gps_list.0.norm2                         | BatchNorm                       | 64     | train
+44  | model.gps_list.0.norm2.module                  | BatchNorm1d                     | 64     | train
+45  | model.gps_list.0.norm3                         | BatchNorm                       | 64     | train
+46  | model.gps_list.0.norm3.module                  | BatchNorm1d                     | 64     | train
+47  | model.gps_list.1                               | GPSConv                         | 11.8 K | train
+48  | model.gps_list.1.conv                          | GINEConv                        | 3.2 K  | train
+49  | model.gps_list.1.conv.aggr_module              | SumAggregation                  | 0      | train
+50  | model.gps_list.1.conv.nn                       | Sequential                      | 2.1 K  | train
+51  | model.gps_list.1.conv.nn.0                     | Linear                          | 1.1 K  | train
+52  | model.gps_list.1.conv.nn.1                     | ReLU                            | 0      | train
+53  | model.gps_list.1.conv.nn.2                     | Linear                          | 1.1 K  | train
+54  | model.gps_list.1.conv.lin                      | Linear                          | 1.1 K  | train
+55  | model.gps_list.1.attn                          | MultiheadAttention              | 4.2 K  | train
+56  | model.gps_list.1.attn.out_proj                 | NonDynamicallyQuantizableLinear | 1.1 K  | train
+57  | model.gps_list.1.mlp                           | Sequential                      | 4.2 K  | train
+58  | model.gps_list.1.mlp.0                         | Linear                          | 2.1 K  | train
+59  | model.gps_list.1.mlp.1                         | ReLU                            | 0      | train
+60  | model.gps_list.1.mlp.2                         | Dropout                         | 0      | train
+61  | model.gps_list.1.mlp.3                         | Linear                          | 2.1 K  | train
+62  | model.gps_list.1.mlp.4                         | Dropout                         | 0      | train
+63  | model.gps_list.1.norm1                         | BatchNorm                       | 64     | train
+64  | model.gps_list.1.norm1.module                  | BatchNorm1d                     | 64     | train
+65  | model.gps_list.1.norm2                         | BatchNorm                       | 64     | train
+66  | model.gps_list.1.norm2.module                  | BatchNorm1d                     | 64     | train
+67  | model.gps_list.1.norm3                         | BatchNorm                       | 64     | train
+68  | model.gps_list.1.norm3.module                  | BatchNorm1d                     | 64     | train
+69  | model.gps_list.2                               | GPSConv                         | 11.8 K | train
+70  | model.gps_list.2.conv                          | GINEConv                        | 3.2 K  | train
+71  | model.gps_list.2.conv.aggr_module              | SumAggregation                  | 0      | train
+72  | model.gps_list.2.conv.nn                       | Sequential                      | 2.1 K  | train
+73  | model.gps_list.2.conv.nn.0                     | Linear                          | 1.1 K  | train
+74  | model.gps_list.2.conv.nn.1                     | ReLU                            | 0      | train
+75  | model.gps_list.2.conv.nn.2                     | Linear                          | 1.1 K  | train
+76  | model.gps_list.2.conv.lin                      | Linear                          | 1.1 K  | train
+77  | model.gps_list.2.attn                          | MultiheadAttention              | 4.2 K  | train
+78  | model.gps_list.2.attn.out_proj                 | NonDynamicallyQuantizableLinear | 1.1 K  | train
+79  | model.gps_list.2.mlp                           | Sequential                      | 4.2 K  | train
+80  | model.gps_list.2.mlp.0                         | Linear                          | 2.1 K  | train
+81  | model.gps_list.2.mlp.1                         | ReLU                            | 0      | train
+82  | model.gps_list.2.mlp.2                         | Dropout                         | 0      | train
+83  | model.gps_list.2.mlp.3                         | Linear                          | 2.1 K  | train
+84  | model.gps_list.2.mlp.4                         | Dropout                         | 0      | train
+85  | model.gps_list.2.norm1                         | BatchNorm                       | 64     | train
+86  | model.gps_list.2.norm1.module                  | BatchNorm1d                     | 64     | train
+87  | model.gps_list.2.norm2                         | BatchNorm                       | 64     | train
+88  | model.gps_list.2.norm2.module                  | BatchNorm1d                     | 64     | train
+89  | model.gps_list.2.norm3                         | BatchNorm                       | 64     | train
+90  | model.gps_list.2.norm3.module                  | BatchNorm1d                     | 64     | train
+91  | model.gps_list.3                               | GPSConv                         | 11.8 K | train
+92  | model.gps_list.3.conv                          | GINEConv                        | 3.2 K  | train
+93  | model.gps_list.3.conv.aggr_module              | SumAggregation                  | 0      | train
+94  | model.gps_list.3.conv.nn                       | Sequential                      | 2.1 K  | train
+95  | model.gps_list.3.conv.nn.0                     | Linear                          | 1.1 K  | train
+96  | model.gps_list.3.conv.nn.1                     | ReLU                            | 0      | train
+97  | model.gps_list.3.conv.nn.2                     | Linear                          | 1.1 K  | train
+98  | model.gps_list.3.conv.lin                      | Linear                          | 1.1 K  | train
+99  | model.gps_list.3.attn                          | MultiheadAttention              | 4.2 K  | train
+100 | model.gps_list.3.attn.out_proj                 | NonDynamicallyQuantizableLinear | 1.1 K  | train
+101 | model.gps_list.3.mlp                           | Sequential                      | 4.2 K  | train
+102 | model.gps_list.3.mlp.0                         | Linear                          | 2.1 K  | train
+103 | model.gps_list.3.mlp.1                         | ReLU                            | 0      | train
+104 | model.gps_list.3.mlp.2                         | Dropout                         | 0      | train
+105 | model.gps_list.3.mlp.3                         | Linear                          | 2.1 K  | train
+106 | model.gps_list.3.mlp.4                         | Dropout                         | 0      | train
+107 | model.gps_list.3.norm1                         | BatchNorm                       | 64     | train
+108 | model.gps_list.3.norm1.module                  | BatchNorm1d                     | 64     | train
+109 | model.gps_list.3.norm2                         | BatchNorm                       | 64     | train
+110 | model.gps_list.3.norm2.module                  | BatchNorm1d                     | 64     | train
+111 | model.gps_list.3.norm3                         | BatchNorm                       | 64     | train
+112 | model.gps_list.3.norm3.module                  | BatchNorm1d                     | 64     | train
+113 | model.gps_list.4                               | GPSConv                         | 11.8 K | train
+114 | model.gps_list.4.conv                          | GINEConv                        | 3.2 K  | train
+115 | model.gps_list.4.conv.aggr_module              | SumAggregation                  | 0      | train
+116 | model.gps_list.4.conv.nn                       | Sequential                      | 2.1 K  | train
+117 | model.gps_list.4.conv.nn.0                     | Linear                          | 1.1 K  | train
+118 | model.gps_list.4.conv.nn.1                     | ReLU                            | 0      | train
+119 | model.gps_list.4.conv.nn.2                     | Linear                          | 1.1 K  | train
+120 | model.gps_list.4.conv.lin                      | Linear                          | 1.1 K  | train
+121 | model.gps_list.4.attn                          | MultiheadAttention              | 4.2 K  | train
+122 | model.gps_list.4.attn.out_proj                 | NonDynamicallyQuantizableLinear | 1.1 K  | train
+123 | model.gps_list.4.mlp                           | Sequential                      | 4.2 K  | train
+124 | model.gps_list.4.mlp.0                         | Linear                          | 2.1 K  | train
+125 | model.gps_list.4.mlp.1                         | ReLU                            | 0      | train
+126 | model.gps_list.4.mlp.2                         | Dropout                         | 0      | train
+127 | model.gps_list.4.mlp.3                         | Linear                          | 2.1 K  | train
+128 | model.gps_list.4.mlp.4                         | Dropout                         | 0      | train
+129 | model.gps_list.4.norm1                         | BatchNorm                       | 64     | train
+130 | model.gps_list.4.norm1.module                  | BatchNorm1d                     | 64     | train
+131 | model.gps_list.4.norm2                         | BatchNorm                       | 64     | train
+132 | model.gps_list.4.norm2.module                  | BatchNorm1d                     | 64     | train
+133 | model.gps_list.4.norm3                         | BatchNorm                       | 64     | train
+134 | model.gps_list.4.norm3.module                  | BatchNorm1d                     | 64     | train
+135 | model.gn_list                                  | ModuleList                      | 480    | train
+136 | model.gn_list.0                                | GraphNorm                       | 96     | train
+137 | model.gn_list.1                                | GraphNorm                       | 96     | train
+138 | model.gn_list.2                                | GraphNorm                       | 96     | train
+139 | model.gn_list.3                                | GraphNorm                       | 96     | train
+140 | model.gn_list.4                                | GraphNorm                       | 96     | train
+141 | model.aggr_list                                | ModuleList                      | 84.6 K | train
+142 | model.aggr_list.0                              | SetTransformerAggregation       | 16.9 K | train
+143 | model.aggr_list.0.encoders                     | ModuleList                      | 5.3 K  | train
+144 | model.aggr_list.0.encoders.0                   | SetAttentionBlock               | 5.3 K  | train
+145 | model.aggr_list.0.encoders.0.mab               | MultiheadAttentionBlock         | 5.3 K  | train
+146 | model.aggr_list.0.encoders.0.mab.attn          | MultiheadAttention              | 4.2 K  | train
+147 | model.aggr_list.0.encoders.0.mab.attn.out_proj | NonDynamicallyQuantizableLinear | 1.1 K  | train
+148 | model.aggr_list.0.encoders.0.mab.lin           | Linear                          | 1.1 K  | train
+149 | model.aggr_list.0.pma                          | PoolingByMultiheadAttention     | 6.4 K  | train
+150 | model.aggr_list.0.pma.lin                      | Linear                          | 1.1 K  | train
+151 | model.aggr_list.0.pma.mab                      | MultiheadAttentionBlock         | 5.3 K  | train
+152 | model.aggr_list.0.pma.mab.attn                 | MultiheadAttention              | 4.2 K  | train
+153 | model.aggr_list.0.pma.mab.attn.out_proj        | NonDynamicallyQuantizableLinear | 1.1 K  | train
+154 | model.aggr_list.0.pma.mab.lin                  | Linear                          | 1.1 K  | train
+155 | model.aggr_list.0.decoders                     | ModuleList                      | 5.3 K  | train
+156 | model.aggr_list.0.decoders.0                   | SetAttentionBlock               | 5.3 K  | train
+157 | model.aggr_list.0.decoders.0.mab               | MultiheadAttentionBlock         | 5.3 K  | train
+158 | model.aggr_list.0.decoders.0.mab.attn          | MultiheadAttention              | 4.2 K  | train
+159 | model.aggr_list.0.decoders.0.mab.attn.out_proj | NonDynamicallyQuantizableLinear | 1.1 K  | train
+160 | model.aggr_list.0.decoders.0.mab.lin           | Linear                          | 1.1 K  | train
+161 | model.aggr_list.1                              | SetTransformerAggregation       | 16.9 K | train
+162 | model.aggr_list.1.encoders                     | ModuleList                      | 5.3 K  | train
+163 | model.aggr_list.1.encoders.0                   | SetAttentionBlock               | 5.3 K  | train
+164 | model.aggr_list.1.encoders.0.mab               | MultiheadAttentionBlock         | 5.3 K  | train
+165 | model.aggr_list.1.encoders.0.mab.attn          | MultiheadAttention              | 4.2 K  | train
+166 | model.aggr_list.1.encoders.0.mab.attn.out_proj | NonDynamicallyQuantizableLinear | 1.1 K  | train
+167 | model.aggr_list.1.encoders.0.mab.lin           | Linear                          | 1.1 K  | train
+168 | model.aggr_list.1.pma                          | PoolingByMultiheadAttention     | 6.4 K  | train
+169 | model.aggr_list.1.pma.lin                      | Linear                          | 1.1 K  | train
+170 | model.aggr_list.1.pma.mab                      | MultiheadAttentionBlock         | 5.3 K  | train
+171 | model.aggr_list.1.pma.mab.attn                 | MultiheadAttention              | 4.2 K  | train
+172 | model.aggr_list.1.pma.mab.attn.out_proj        | NonDynamicallyQuantizableLinear | 1.1 K  | train
+173 | model.aggr_list.1.pma.mab.lin                  | Linear                          | 1.1 K  | train
+174 | model.aggr_list.1.decoders                     | ModuleList                      | 5.3 K  | train
+175 | model.aggr_list.1.decoders.0                   | SetAttentionBlock               | 5.3 K  | train
+176 | model.aggr_list.1.decoders.0.mab               | MultiheadAttentionBlock         | 5.3 K  | train
+177 | model.aggr_list.1.decoders.0.mab.attn          | MultiheadAttention              | 4.2 K  | train
+178 | model.aggr_list.1.decoders.0.mab.attn.out_proj | NonDynamicallyQuantizableLinear | 1.1 K  | train
+179 | model.aggr_list.1.decoders.0.mab.lin           | Linear                          | 1.1 K  | train
+180 | model.aggr_list.2                              | SetTransformerAggregation       | 16.9 K | train
+181 | model.aggr_list.2.encoders                     | ModuleList                      | 5.3 K  | train
+182 | model.aggr_list.2.encoders.0                   | SetAttentionBlock               | 5.3 K  | train
+183 | model.aggr_list.2.encoders.0.mab               | MultiheadAttentionBlock         | 5.3 K  | train
+184 | model.aggr_list.2.encoders.0.mab.attn          | MultiheadAttention              | 4.2 K  | train
+185 | model.aggr_list.2.encoders.0.mab.attn.out_proj | NonDynamicallyQuantizableLinear | 1.1 K  | train
+186 | model.aggr_list.2.encoders.0.mab.lin           | Linear                          | 1.1 K  | train
+187 | model.aggr_list.2.pma                          | PoolingByMultiheadAttention     | 6.4 K  | train
+188 | model.aggr_list.2.pma.lin                      | Linear                          | 1.1 K  | train
+189 | model.aggr_list.2.pma.mab                      | MultiheadAttentionBlock         | 5.3 K  | train
+190 | model.aggr_list.2.pma.mab.attn                 | MultiheadAttention              | 4.2 K  | train
+191 | model.aggr_list.2.pma.mab.attn.out_proj        | NonDynamicallyQuantizableLinear | 1.1 K  | train
+192 | model.aggr_list.2.pma.mab.lin                  | Linear                          | 1.1 K  | train
+193 | model.aggr_list.2.decoders                     | ModuleList                      | 5.3 K  | train
+194 | model.aggr_list.2.decoders.0                   | SetAttentionBlock               | 5.3 K  | train
+195 | model.aggr_list.2.decoders.0.mab               | MultiheadAttentionBlock         | 5.3 K  | train
+196 | model.aggr_list.2.decoders.0.mab.attn          | MultiheadAttention              | 4.2 K  | train
+197 | model.aggr_list.2.decoders.0.mab.attn.out_proj | NonDynamicallyQuantizableLinear | 1.1 K  | train
+198 | model.aggr_list.2.decoders.0.mab.lin           | Linear                          | 1.1 K  | train
+199 | model.aggr_list.3                              | SetTransformerAggregation       | 16.9 K | train
+200 | model.aggr_list.3.encoders                     | ModuleList                      | 5.3 K  | train
+201 | model.aggr_list.3.encoders.0                   | SetAttentionBlock               | 5.3 K  | train
+202 | model.aggr_list.3.encoders.0.mab               | MultiheadAttentionBlock         | 5.3 K  | train
+203 | model.aggr_list.3.encoders.0.mab.attn          | MultiheadAttention              | 4.2 K  | train
+204 | model.aggr_list.3.encoders.0.mab.attn.out_proj | NonDynamicallyQuantizableLinear | 1.1 K  | train
+205 | model.aggr_list.3.encoders.0.mab.lin           | Linear                          | 1.1 K  | train
+206 | model.aggr_list.3.pma                          | PoolingByMultiheadAttention     | 6.4 K  | train
+207 | model.aggr_list.3.pma.lin                      | Linear                          | 1.1 K  | train
+208 | model.aggr_list.3.pma.mab                      | MultiheadAttentionBlock         | 5.3 K  | train
+209 | model.aggr_list.3.pma.mab.attn                 | MultiheadAttention              | 4.2 K  | train
+210 | model.aggr_list.3.pma.mab.attn.out_proj        | NonDynamicallyQuantizableLinear | 1.1 K  | train
+211 | model.aggr_list.3.pma.mab.lin                  | Linear                          | 1.1 K  | train
+212 | model.aggr_list.3.decoders                     | ModuleList                      | 5.3 K  | train
+213 | model.aggr_list.3.decoders.0                   | SetAttentionBlock               | 5.3 K  | train
+214 | model.aggr_list.3.decoders.0.mab               | MultiheadAttentionBlock         | 5.3 K  | train
+215 | model.aggr_list.3.decoders.0.mab.attn          | MultiheadAttention              | 4.2 K  | train
+216 | model.aggr_list.3.decoders.0.mab.attn.out_proj | NonDynamicallyQuantizableLinear | 1.1 K  | train
+217 | model.aggr_list.3.decoders.0.mab.lin           | Linear                          | 1.1 K  | train
+218 | model.aggr_list.4                              | SetTransformerAggregation       | 16.9 K | train
+219 | model.aggr_list.4.encoders                     | ModuleList                      | 5.3 K  | train
+220 | model.aggr_list.4.encoders.0                   | SetAttentionBlock               | 5.3 K  | train
+221 | model.aggr_list.4.encoders.0.mab               | MultiheadAttentionBlock         | 5.3 K  | train
+222 | model.aggr_list.4.encoders.0.mab.attn          | MultiheadAttention              | 4.2 K  | train
+223 | model.aggr_list.4.encoders.0.mab.attn.out_proj | NonDynamicallyQuantizableLinear | 1.1 K  | train
+224 | model.aggr_list.4.encoders.0.mab.lin           | Linear                          | 1.1 K  | train
+225 | model.aggr_list.4.pma                          | PoolingByMultiheadAttention     | 6.4 K  | train
+226 | model.aggr_list.4.pma.lin                      | Linear                          | 1.1 K  | train
+227 | model.aggr_list.4.pma.mab                      | MultiheadAttentionBlock         | 5.3 K  | train
+228 | model.aggr_list.4.pma.mab.attn                 | MultiheadAttention              | 4.2 K  | train
+229 | model.aggr_list.4.pma.mab.attn.out_proj        | NonDynamicallyQuantizableLinear | 1.1 K  | train
+230 | model.aggr_list.4.pma.mab.lin                  | Linear                          | 1.1 K  | train
+231 | model.aggr_list.4.decoders                     | ModuleList                      | 5.3 K  | train
+232 | model.aggr_list.4.decoders.0                   | SetAttentionBlock               | 5.3 K  | train
+233 | model.aggr_list.4.decoders.0.mab               | MultiheadAttentionBlock         | 5.3 K  | train
+234 | model.aggr_list.4.decoders.0.mab.attn          | MultiheadAttention              | 4.2 K  | train
+235 | model.aggr_list.4.decoders.0.mab.attn.out_proj | NonDynamicallyQuantizableLinear | 1.1 K  | train
+236 | model.aggr_list.4.decoders.0.mab.lin           | Linear                          | 1.1 K  | train
+237 | model.pool_list                                | ModuleList                      | 330    | train
+238 | model.pool_list.0                              | SAGPooling                      | 66     | train
+239 | model.pool_list.0.gnn                          | GraphConv                       | 65     | train
+240 | model.pool_list.0.gnn.aggr_module              | SumAggregation                  | 0      | train
+241 | model.pool_list.0.gnn.lin_rel                  | Linear                          | 33     | train
+242 | model.pool_list.0.gnn.lin_root                 | Linear                          | 32     | train
+243 | model.pool_list.0.select                       | SelectTopK                      | 1      | train
+244 | model.pool_list.0.select.act                   | Tanh                            | 0      | train
+245 | model.pool_list.0.connect                      | FilterEdges                     | 0      | train
+246 | model.pool_list.1                              | SAGPooling                      | 66     | train
+247 | model.pool_list.1.gnn                          | GraphConv                       | 65     | train
+248 | model.pool_list.1.gnn.aggr_module              | SumAggregation                  | 0      | train
+249 | model.pool_list.1.gnn.lin_rel                  | Linear                          | 33     | train
+250 | model.pool_list.1.gnn.lin_root                 | Linear                          | 32     | train
+251 | model.pool_list.1.select                       | SelectTopK                      | 1      | train
+252 | model.pool_list.1.select.act                   | Tanh                            | 0      | train
+253 | model.pool_list.1.connect                      | FilterEdges                     | 0      | train
+254 | model.pool_list.2                              | SAGPooling                      | 66     | train
+255 | model.pool_list.2.gnn                          | GraphConv                       | 65     | train
+256 | model.pool_list.2.gnn.aggr_module              | SumAggregation                  | 0      | train
+257 | model.pool_list.2.gnn.lin_rel                  | Linear                          | 33     | train
+258 | model.pool_list.2.gnn.lin_root                 | Linear                          | 32     | train
+259 | model.pool_list.2.select                       | SelectTopK                      | 1      | train
+260 | model.pool_list.2.select.act                   | Tanh                            | 0      | train
+261 | model.pool_list.2.connect                      | FilterEdges                     | 0      | train
+262 | model.pool_list.3                              | SAGPooling                      | 66     | train
+263 | model.pool_list.3.gnn                          | GraphConv                       | 65     | train
+264 | model.pool_list.3.gnn.aggr_module              | SumAggregation                  | 0      | train
+265 | model.pool_list.3.gnn.lin_rel                  | Linear                          | 33     | train
+266 | model.pool_list.3.gnn.lin_root                 | Linear                          | 32     | train
+267 | model.pool_list.3.select                       | SelectTopK                      | 1      | train
+268 | model.pool_list.3.select.act                   | Tanh                            | 0      | train
+269 | model.pool_list.3.connect                      | FilterEdges                     | 0      | train
+270 | model.pool_list.4                              | SAGPooling                      | 66     | train
+271 | model.pool_list.4.gnn                          | GraphConv                       | 65     | train
+272 | model.pool_list.4.gnn.aggr_module              | SumAggregation                  | 0      | train
+273 | model.pool_list.4.gnn.lin_rel                  | Linear                          | 33     | train
+274 | model.pool_list.4.gnn.lin_root                 | Linear                          | 32     | train
+275 | model.pool_list.4.select                       | SelectTopK                      | 1      | train
+276 | model.pool_list.4.select.act                   | Tanh                            | 0      | train
+277 | model.pool_list.4.connect                      | FilterEdges                     | 0      | train
+278 | model.linear1                                  | Linear                          | 2.1 K  | train
+279 | model.linear2                                  | Linear                          | 2.1 K  | train
+280 | model.linear3                                  | Linear                          | 528    | train
+281 | model.linear4                                  | Linear                          | 17     | train
+282 | loss_fn                                        | L1Loss                          | 0      | train
+-------------------------------------------------------------------------------------------------------------
+167 K     Trainable params
+0         Non-trainable params
+167 K     Total params
+0.668     Total estimated model params size (MB)
