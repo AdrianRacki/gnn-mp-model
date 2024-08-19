@@ -10,6 +10,8 @@ These repositories are part of a doctoral thesis aimed at creating models to pre
 
 The neural network used uses state-of-the-art GNNs, including (GPS) Graph Transformer layers [https://arxiv.org/abs/2205.12454], Adaptive Readout layers [https://arxiv.org/abs/2211.04952], Hierarchical GNNs Architecture [https://arxiv.org/abs/1811.01287] and Graph Normalization Layers [https://arxiv.org/abs/2009.03294].
 
+The source code for the GNN pipeline can be found in src/gnn_mp_model/pipelines. The main model code can be found in src/gnn_mp_model/pipelines/data_science/nodes.py. 
+
 Project structure generated with kedro-viz:
 ![kedro-pipeline (3)](https://github.com/user-attachments/assets/1bbdef6a-9962-4e9f-9b7f-e972c0da34f6)
 
