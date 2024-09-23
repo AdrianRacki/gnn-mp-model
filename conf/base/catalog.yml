@@ -18,6 +18,10 @@ merged_database:
   type: pandas.CSVDataset
   filepath: data\03_primary\merged_database.csv
 
+smiles_to_use:
+  type: pandas.CSVDataset
+  filepath: data\07_model_output\smiles_to_use.csv
+
 random_train:
   type: pandas.ParquetDataset
   filepath: data/03_primary/random_train.pq
@@ -25,6 +29,22 @@ random_train:
 random_test:
   type: pandas.ParquetDataset
   filepath: data/03_primary/random_test.pq
+
+sys_train:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/sys_train.pq
+
+sys_test:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/sys_test.pq
+
+sys_train_dataloader:
+  type: gnn_mp_model.datasets.graph_dataset.GraphDataset
+  filepath: data/04_feature/sys_train_dataloader.pt
+
+sys_test_dataloader:
+  type: gnn_mp_model.datasets.graph_dataset.GraphDataset
+  filepath: data/04_feature/sys_test_dataloader.pt
 
 random_train_dataloader:
   type: gnn_mp_model.datasets.graph_dataset.GraphDataset
