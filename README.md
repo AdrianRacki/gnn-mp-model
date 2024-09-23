@@ -1,7 +1,7 @@
 # GNN MP model
 **This repository is under development.**
 
-Final results will be presented (and added hereafter) at the PTChem2024 scientific conference in mid-September. 
+Final results were presented at the PTChem2024 scientific conference in mid-September. 
 
 ## Overview
 
