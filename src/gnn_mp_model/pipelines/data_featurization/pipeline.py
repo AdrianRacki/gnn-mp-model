@@ -13,27 +13,15 @@ def create_pipeline(**kwargs) -> Pipeline:
         [
             node(
                 func=generate_graph_loader,
-                inputs=["sys_train", "params:train", "params:train_batch_size"],
-                outputs="sys_train_dataloader",
-                name="generate_graph_loader_st1",
-            ),
-            node(
-                func=generate_graph_loader,
-                inputs=["sys_test", "params:test", "params:test_batch_size"],
-                outputs="sys_test_dataloader",
-                name="generate_graph_loader_st2",
+                inputs=["random_test", "params:test", "params:test_batch_size"],
+                outputs="random_test_dataloader",
+                name="generate_graph_loader_rt2",
             ),
             node(
                 func=generate_graph_loader,
                 inputs=["random_train", "params:train", "params:train_batch_size"],
                 outputs="random_train_dataloader",
                 name="generate_graph_loader_rt1",
-            ),
-            node(
-                func=generate_graph_loader,
-                inputs=["random_test", "params:test", "params:test_batch_size"],
-                outputs="random_test_dataloader",
-                name="generate_graph_loader_rt2",
             ),
             node(
                 func=generate_graph_loader,

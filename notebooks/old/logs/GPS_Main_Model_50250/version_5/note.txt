@@ -1,1 +1,0 @@
--50 - 250 data, 4 linear layers, no gf, no pool, concat no sum, 

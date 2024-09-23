@@ -1,1 +1,1 @@
-{}
+{"random_train": {"rows": 2314, "columns": 2, "file_size": 62066}, "random_test": {"rows": 258, "columns": 2, "file_size": 10389}, "merged_database": {"rows": 2572, "columns": 2, "file_size": 134067}}

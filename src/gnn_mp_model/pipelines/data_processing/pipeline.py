@@ -41,11 +41,6 @@ def create_pipeline(**kwargs) -> Pipeline:
                 outputs=["random_train", "random_test"],
                 name="random_data_split",
             ),
-            node(
-                func=systematic_data_split,
-                inputs=["merged_database", "params:split_ratio"],
-                outputs=["sys_train", "sys_test"],
-                name="systematic_data_split",
-            ),
+
         ]
     )

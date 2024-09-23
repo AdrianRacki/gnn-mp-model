@@ -7,9 +7,7 @@ import typing as t
 import numpy as np
 import pandas as pd
 from rdkit import Chem
-from rdkit.Chem import AllChem
 from sklearn.model_selection import train_test_split
-from twinning import twin
 
 
 def _drop_columns_main(df: pd.DataFrame) -> pd.DataFrame:
@@ -99,32 +97,10 @@ def merge_data(main: pd.DataFrame, ilt: pd.DataFrame) -> pd.DataFrame:
     merged_df = pd.concat(frames)
     merged_df = merged_df.drop_duplicates(subset="smiles")
     merged_df = merged_df.where(merged_df["MP"] < 250).dropna()  # noqa: PLR2004
-    merged_df = merged_df.where(merged_df["MP"] > -50).dropna()  # noqa: PLR2004
+    merged_df = merged_df.where(merged_df["MP"] > 0).dropna()  # noqa: PLR2004
     return merged_df
 
 
 def random_data_split(df: pd.DataFrame, split_ratio: float) -> t.Tuple:
-    df_train, df_test = train_test_split(df, test_size=split_ratio, random_state=47)
-    return df_train, df_test
-
-
-def systematic_data_split(df: pd.DataFrame, split_ratio: float) -> t.Tuple:
-    data = []
-    split_ratio = int(1 / split_ratio)
-    fpgen = AllChem.GetMorganGenerator(radius=3)
-    for index, row in df.iterrows():
-        smiles = row["smiles"]
-        mp = row.iloc[1]
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is not None:
-            fp = fpgen.GetCountFingerprint(mol)
-            fp_vector = np.array(fp.ToList())
-            fp_vector = np.append(fp_vector, mp)
-            data.append(fp_vector)
-    data = np.array(data)
-    twin_idx = twin(data, r=split_ratio, u1=42)
-    mask1 = df.index.isin(twin_idx)
-    mask2 = ~mask1
-    df_test = df[mask1]
-    df_train = df[mask2]
+    df_train, df_test = train_test_split(df, test_size=split_ratio, random_state=42)
     return df_train, df_test

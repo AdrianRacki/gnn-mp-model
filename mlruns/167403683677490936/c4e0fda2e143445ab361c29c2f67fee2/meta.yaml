@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/01121272/Desktop/Projects/gnn-mp-model/mlruns/167403683677490936/c4e0fda2e143445ab361c29c2f67fee2/artifacts
+end_time: 1725002260529
+entry_point_name: ''
+experiment_id: '167403683677490936'
+lifecycle_stage: active
+run_id: c4e0fda2e143445ab361c29c2f67fee2
+run_name: data_processing
+run_uuid: c4e0fda2e143445ab361c29c2f67fee2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1725002253919
+status: 3
+tags: []
+user_id: '01121272'

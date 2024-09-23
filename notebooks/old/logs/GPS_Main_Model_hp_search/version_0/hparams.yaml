@@ -1,7 +1,0 @@
-weight_decay: 1.0e-05
-pooling: false
-num_layers: 3
-lr: 0.005
-hidden_size: 8
-gamma: 1
-dense_size: 64
